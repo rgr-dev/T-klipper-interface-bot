@@ -1,0 +1,19 @@
+# Static printer config. Each entry is a Klipper/Moonraker printer
+# accessible on the LAN. The "name" is the identifier used in inline
+# buttons, commands, and as a label in push alerts.
+#
+# Copy this file to printers.yaml and fill in your own printer(s) data.
+# printers.yaml is gitignored — it's local, per-deployment config, not
+# meant to be versioned (it usually contains your LAN's IP addresses).
+printers:
+  - name: k1c
+    display_name: "Creality K1C"
+    moonraker_url: "http://192.168.1.100:7125"
+    api_key: null           # only needed if Moonraker has "require_auth" enabled
+    camera_snapshot_url: "http://192.168.1.100:8080/?action=snapshot"
+
+  # - name: ender3
+  #   display_name: "Ender 3 V2"
+  #   moonraker_url: "http://192.168.1.101:7125"
+  #   api_key: null
+  #   camera_snapshot_url: "http://192.168.1.101/webcam/?action=snapshot"

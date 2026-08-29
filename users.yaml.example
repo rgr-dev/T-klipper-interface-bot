@@ -1,0 +1,12 @@
+# Allowlist of Telegram users allowed to use the bot. See
+# docs/architecture.md#static-config-vs-dynamic-state for the
+# pending/confirmed flow.
+#
+# Copy this file to users.yaml and add your own Telegram username(s).
+# users.yaml is gitignored — it contains real Telegram user_ids, not meant
+# to be versioned in a public repo.
+users:
+- username: your_telegram_username
+  user_id: null
+  status: pending
+  role: admin

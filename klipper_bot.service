@@ -1,0 +1,24 @@
+[Unit]
+Description=klipper_bot - Telegram bot / REST API for Klipper printers
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dietpi
+Group=dietpi
+WorkingDirectory=/home/dietpi/klipper_bot
+EnvironmentFile=/home/dietpi/klipper_bot/.env
+ExecStart=/home/dietpi/klipper_bot/venv/bin/python main.py --mode both
+Restart=on-failure
+RestartSec=5
+
+# Hardening (safe defaults for a single-purpose bot process)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/dietpi/klipper_bot/data /home/dietpi/klipper_bot/users.yaml
+
+[Install]
+WantedBy=multi-user.target

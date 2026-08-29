@@ -1,0 +1,10 @@
+.env
+printers.yaml
+users.yaml
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+.directory
